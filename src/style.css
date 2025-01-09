@@ -62,7 +62,7 @@
   }
 
   .stars {
-    color: #007bff;
+    color: #052a53;
     margin-bottom: 10px;
   }
 
@@ -91,6 +91,20 @@
   .card button:hover {
     background-color: #0056b3;
   }
+
+  .learn-more-btn {
+    display: inline-block;
+    padding: 10px 80px;
+    color: #fff;
+    background-color: #052a53;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .learn-more-btn:hover {
+    background-color: #0056b3;
+  }
+  
 
   .hidden {
     display: none !important;

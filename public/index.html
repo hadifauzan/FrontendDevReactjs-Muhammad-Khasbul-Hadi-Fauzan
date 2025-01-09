@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../src/style.css" />
     <title>Restaurant Filter</title>
   </head>
   <body>
     <div class="header">
       <h1>Restaurants</h1>
-      <br>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </div>
-    <hr>
+    <hr />
     <div class="container">
       <div class="filters">
         <div>
@@ -48,20 +47,17 @@
         </div>
         <button id="clear-filters">Clear All</button>
       </div>
-      <hr>
+      <hr />
       <h2>All Restaurants</h2>
-
       <div class="grid" id="restaurant-grid">
         <!-- Restaurant cards will be dynamically populated here -->
       </div>
-      <br>
       <div class="load-more">
         <button>LOAD MORE</button>
       </div>
     </div>
 
     <script>
-      // Restaurant data
       const restaurants = [
         {
           name: "Sawasdee Restaurants",
@@ -69,7 +65,8 @@
           price: "$$$",
           isOpen: true,
           rating: 4,
-          image: "../img/resto1.jpg", // Add image path
+          image: "../img/resto1.jpg",
+          url: "resto1.html",
         },
         {
           name: "King Krab Restaurants",
@@ -78,6 +75,7 @@
           isOpen: false,
           rating: 3,
           image: "../img/resto2.jpg",
+          url: "resto2.html",
         },
         {
           name: "Onigashima Restaurants",
@@ -86,6 +84,7 @@
           isOpen: true,
           rating: 4,
           image: "../img/resto3.jpg",
+          url: "resto3.html",
         },
         {
           name: "Riva del Gusto Restaurants",
@@ -94,6 +93,7 @@
           isOpen: true,
           rating: 4,
           image: "../img/resto4.jpg",
+          url: "resto4.html",
         },
         {
           name: "McDaniel Restaurants",
@@ -102,6 +102,7 @@
           isOpen: false,
           rating: 3,
           image: "../img/resto5.jpg",
+          url: "resto5.html",
         },
         {
           name: "Casa del Taco Restaurants",
@@ -110,6 +111,7 @@
           isOpen: true,
           rating: 4,
           image: "../img/resto6.jpg",
+          url: "resto6.html",
         },
         {
           name: "Beef Steak House",
@@ -118,6 +120,7 @@
           isOpen: true,
           rating: 3,
           image: "../img/resto7.jpg",
+          url: "resto7.html",
         },
         {
           name: "Tierra del Tacos",
@@ -126,48 +129,39 @@
           isOpen: true,
           rating: 3,
           image: "../img/resto8.jpg",
+          url: "resto8.html",
         },
       ];
 
-      // DOM elements
       const restaurantGrid = document.getElementById("restaurant-grid");
       const categoryFilter = document.getElementById("filter-category");
       const priceFilter = document.getElementById("filter-price");
       const openNowFilter = document.getElementById("filter-open-now");
       const clearFiltersBtn = document.getElementById("clear-filters");
 
-      // Create restaurant cards
       function createRestaurantCard(restaurant) {
         return `
-                <div class="card" data-category="${
-                  restaurant.category
-                }" data-price="${restaurant.price}" data-open="${
-          restaurant.isOpen
-        }">
-                    <img src="${restaurant.image}" alt="${
-          restaurant.name
-        }" onerror="this.src='/api/placeholder/400/320'">
-                    <h3>${restaurant.name}</h3>
-                    <div class="stars">
-                        ${getStarRating(restaurant.rating)}
-                    </div>
-                    <p>${restaurant.category} - ${restaurant.price}</p>
-                    <div class="status">
-                        <span class="${restaurant.isOpen ? "open" : "closed"}">
-                            ${restaurant.isOpen ? "Open Now" : "Closed"}
-                        </span>
-                    </div>
-                    <button>Learn More</button>
-                </div>
-            `;
+          <div class="card" data-category="${restaurant.category}" data-price="${restaurant.price}" data-open="${restaurant.isOpen}">
+            <img src="${restaurant.image}" alt="${restaurant.name}" onerror="this.src='/api/placeholder/400/320'">
+            <h3>${restaurant.name}</h3>
+            <div class="stars">
+              ${getStarRating(restaurant.rating)}
+            </div>
+            <p>${restaurant.category} - ${restaurant.price}</p>
+            <div class="status">
+              <span class="${restaurant.isOpen ? "open" : "closed"}">
+                ${restaurant.isOpen ? "Open Now" : "Closed"}
+              </span>
+            </div>
+            <a href="${restaurant.url}" class="learn-more-btn">Learn More</a>
+          </div>
+        `;
       }
 
-      // Generate star rating HTML
       function getStarRating(rating) {
         return "★".repeat(rating) + "☆".repeat(5 - rating);
       }
 
-      // Filter restaurants
       function filterRestaurants() {
         const selectedCategory = categoryFilter.value;
         const selectedPrice = priceFilter.value;
@@ -192,7 +186,6 @@
         });
       }
 
-      // Clear all filters
       function clearFilters() {
         categoryFilter.value = "all";
         priceFilter.value = "all";
@@ -200,22 +193,18 @@
         filterRestaurants();
       }
 
-      // Initialize page
       function initialize() {
-        // Populate restaurant grid
         const restaurantHTML = restaurants
           .map((restaurant) => createRestaurantCard(restaurant))
           .join("");
         restaurantGrid.innerHTML = restaurantHTML;
 
-        // Add event listeners
         categoryFilter.addEventListener("change", filterRestaurants);
         priceFilter.addEventListener("change", filterRestaurants);
         openNowFilter.addEventListener("change", filterRestaurants);
         clearFiltersBtn.addEventListener("click", clearFilters);
       }
 
-      // Start the application
       initialize();
     </script>
   </body>
