@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px; /* Jarak antar elemen */
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.filters div {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara label dan elemen input */
+}
+
+.filters label {
+    font-weight: normal;
+    color: #333;
+}
+
+.filters select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    min-width: 120px; /* Lebar dropdown */
+}
+
+.filters input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #0044cc; /* Warna untuk radio button */
+}
+
+.filters button {
+    padding: 5px 10px;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filters button:hover {
+    background-color: #003399;
+}
+
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    display: flex;
+    font-size: 18px;
+    margin: 15px 0 5px;
+}
+
+.card p {
+    display: flex;
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+}
+.status {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Jarak antara lingkaran dan teks */
+    font-size: 14px; /* Ukuran teks */
+    color: #333; /* Warna teks */
+}
+
+.status-indicator {
+    width: 8px; /* Diameter lingkaran */
+    height: 8px; /* Diameter lingkaran */
+    border-radius: 50%; /* Membuat lingkaran */
+}
+
+.card .status .open {
+    color: #00cc44; /* Warna hijau untuk status "Open Now" */
+    font-weight: bold;
+}
+
+.card .status .closed {
+    color: red;
+    font-weight: bold;
+}
+
+.card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #003399;
+}
+
+.stars {
+    display: flex;
+    gap: 5px; /* Jarak antar bintang */
+    margin: 10px 0; /* Margin untuk memberikan ruang di sekitar */
+}
+
+.star {
+    font-size: 20px; /* Ukuran bintang */
+}
+
+.blue-star {
+    color: #0044cc; /* Warna biru */
+}
+
+.white-star {
+    color: #ccc; /* Warna abu-abu atau putih */
+}
+
+
+/* Load More Button */
+.load-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.load-more button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #0044cc;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.load-more button:hover {
+    background-color: #003399;
+    color: white;
+}
