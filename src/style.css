@@ -1,182 +1,121 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-}
-
-.container {
     padding: 20px;
+  }
+
+  .container {
     max-width: 1200px;
-    margin: auto;
-}
+    margin: 0 auto;
+  }
 
-.header {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.header h1 {
-    margin-bottom: 10px;
-}
-
-.filters {
+  .filters {
     display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    gap: 20px; /* Jarak antar elemen */
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #333;
-}
+  }
 
-.filters div {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Jarak antara label dan elemen input */
-}
-
-.filters label {
-    font-weight: normal;
-    color: #333;
-}
-
-.filters select {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
+  .filters select,
+  .filters button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-    min-width: 120px; /* Lebar dropdown */
-}
+    font-size: 14px;
+  }
 
-.filters input[type="radio"] {
-    margin-right: 5px;
-    accent-color: #0044cc; /* Warna untuk radio button */
-}
-
-.filters button {
-    padding: 5px 10px;
-    background-color: #0044cc;
+  .filters button {
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
-}
+  }
 
-.filters button:hover {
-    background-color: #003399;
-}
+  .filters button:hover {
+    background-color: #0056b3;
+  }
 
-
-/* Grid Layout */
-.grid {
+  .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-}
+  }
 
-.card {
+  .card {
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+    padding: 15px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.card h3 {
-    display: flex;
+  .card h3 {
+    margin-bottom: 10px;
     font-size: 18px;
-    margin: 15px 0 5px;
-}
+  }
 
-.card p {
-    display: flex;
-    color: #666;
-    font-size: 14px;
-    margin: 5px 0;
-}
-.status {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Jarak antara lingkaran dan teks */
-    font-size: 14px; /* Ukuran teks */
-    color: #333; /* Warna teks */
-}
+  .stars {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
 
-.status-indicator {
-    width: 8px; /* Diameter lingkaran */
-    height: 8px; /* Diameter lingkaran */
-    border-radius: 50%; /* Membuat lingkaran */
-}
+  .status {
+    margin: 10px 0;
+  }
 
-.card .status .open {
-    color: #00cc44; /* Warna hijau untuk status "Open Now" */
-    font-weight: bold;
-}
+  .open {
+    color: green;
+  }
 
-.card .status .closed {
+  .closed {
     color: red;
-    font-weight: bold;
-}
+  }
 
-.card button {
+  .card button {
     width: 100%;
-    padding: 10px;
-    background-color: #0044cc;
+    padding: 8px;
+    background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 0 0 8px 8px;
-    cursor: pointer;
-}
-
-.card button:hover {
-    background-color: #003399;
-}
-
-.stars {
-    display: flex;
-    gap: 5px; /* Jarak antar bintang */
-    margin: 10px 0; /* Margin untuk memberikan ruang di sekitar */
-}
-
-.star {
-    font-size: 20px; /* Ukuran bintang */
-}
-
-.blue-star {
-    color: #0044cc; /* Warna biru */
-}
-
-.white-star {
-    color: #ccc; /* Warna abu-abu atau putih */
-}
-
-
-/* Load More Button */
-.load-more {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.load-more button {
-    padding: 10px 20px;
-    background-color: white;
-    color: #0044cc;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+  }
 
-.load-more button:hover {
+  .card button:hover {
+    background-color: #0056b3;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .load-more {
+    text-align: center;
+  }
+
+  .load-more button {
+    padding: 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .load-more button:hover {
     background-color: #003399;
     color: white;
-}
+  }
